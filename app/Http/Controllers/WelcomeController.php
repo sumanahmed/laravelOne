@@ -13,7 +13,7 @@ class WelcomeController extends Controller
 
     }
     public function category(){
-        return view('.front.category.category-content');
+        return view('front.category.category-content');
     }
 
 
