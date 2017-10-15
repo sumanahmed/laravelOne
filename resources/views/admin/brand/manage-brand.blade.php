@@ -22,31 +22,31 @@
                             <thead>
                             <tr>
                                 <th>SL NO</th>
-                                <th>Category ID</th>
-                                <th>Category Name</th>
-                                <th>Category Description</th>
+                                <th>Brand ID</th>
+                                <th>Brand Name</th>
+                                <th>Brand Description</th>
                                 <th>Publication Status</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php $i=1; ?>
-                            @foreach($allCategoies as $allCategory)
+                            @foreach($allBrands as $allBrand)
                                 <tr class="odd gradeX">
                                     <td>{{ $i++ }}</td>
-                                    <td>{{ $allCategory->id }}</td>
-                                    <td>{{ $allCategory->category_name }}</td>
-                                    <td>{{ $allCategory->category_description }}</td>
-                                    <td>{{ $allCategory->publication_status == 1 ? 'Published' : 'Unpublished' }}</td>
+                                    <td>{{ $allBrand->id }}</td>
+                                    <td>{{ $allBrand->Brand_name }}</td>
+                                    <td>{{ $allBrand->Brand_description }}</td>
+                                    <td>{{ $allBrand->publication_status == 1 ? 'Published' : 'Unpublished' }}</td>
                                     <td>
-                                        @if($allCategory->publication_status == 1)
-                                            <a href="{{ url('/unpublished-category/'.$allCategory->id) }}" class="btn btn-success btn-xs" title="Published Category"> <span class="glyphicon glyphicon-arrow-up"></span></a>
+                                        @if($allBrand->publication_status == 1)
+                                            <a href="{{ url('/unpublished-Brand/'.$allBrand->id) }}" class="btn btn-success btn-xs" title="Published Brand"> <span class="glyphicon glyphicon-arrow-up"></span></a>
                                         @else
-                                            <a href="{{ url('/published-category/'.$allCategory->id) }}" class="btn btn-warning btn-xs" title="Unpublished Category"> <span class="glyphicon glyphicon-arrow-down"></span></a>
+                                            <a href="{{ url('/published-Brand/'.$allBrand->id) }}" class="btn btn-warning btn-xs" title="Unpublished Brand"> <span class="glyphicon glyphicon-arrow-down"></span></a>
                                         @endif
 
-                                        <a href="{{ url('/edit-category/'.$allCategory->id) }}" class="btn btn-primary btn-xs" title="Edit Category"> <span class="glyphicon glyphicon-edit"></span></a>
-                                        <a href="{{ url('/delete-category/'.$allCategory->id) }}" onclick="return confirm('Are you sure to delete ?');" class="btn btn-danger btn-xs" title="Delete Category"> <span class="glyphicon glyphicon-trash"></span></a>
+                                        <a href="{{ url('/edit-Brand/'.$allBrand->id) }}" class="btn btn-primary btn-xs" title="Edit Brand"> <span class="glyphicon glyphicon-edit"></span></a>
+                                        <a href="{{ url('/delete-Brand/'.$allBrand->id) }}" onclick="return confirm('Are you sure to delete ?');" class="btn btn-danger btn-xs" title="Delete Brand"> <span class="glyphicon glyphicon-trash"></span></a>
                                     </td>
                                 </tr>
                             @endforeach

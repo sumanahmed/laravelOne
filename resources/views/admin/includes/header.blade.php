@@ -17,6 +17,12 @@
     <!-- MetisMenu CSS -->
     <link href="{{ asset('/admin/') }}/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
+    <!-- DataTables CSS -->
+    <link href="{{ asset('/admin/') }}/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="{{ asset('/admin/') }}/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="{{ asset('/admin/') }}/dist/css/sb-admin-2.css" rel="stylesheet">
 
@@ -83,7 +89,32 @@
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
-                    </li> <li>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-navicon fa-fw"></i> Brand<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{ url('/add-brand') }}">Add Brand</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/manage-brand') }}">Manage Brand</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-navicon fa-fw"></i> Product<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{ url('/add-product') }}">Add Product</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('/manage-product') }}">Manage Product</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
                         <a href=""><i class="fa fa-navicon fa-fw"></i>  Blogs<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>

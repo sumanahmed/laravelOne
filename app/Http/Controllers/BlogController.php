@@ -9,6 +9,10 @@ class BlogController extends Controller
     public function addBlog(){
         return view('admin.blog.add-blog');
     }
+
+    public function saveBlogInfo(){
+
+    }
     public function manageBlog(){
         return view('admin.blog.manage-blog');
     }
