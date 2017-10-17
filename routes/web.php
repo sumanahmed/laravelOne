@@ -19,11 +19,20 @@ Route::get('/delete-category/{id}', 'CategoryController@deleteCategoryInfo');
 //back End Brand management
 Route::get('/add-brand', 'BrandController@addBrand');
 Route::post('/new-brand', 'BrandController@saveBrandInfo');
-Route::post('/manage-brand', 'BrandController@manageBrandInfo');
+Route::get('/manage-brand', 'BrandController@manageBrandInfo');
+Route::get('/unpublished-brand/{id}', 'BrandController@unpublishedBrandInfo');
+Route::get('/published-brand/{id}', 'BrandController@publishedBrandInfo');
+Route::get('/edit-brand/{id}', 'BrandController@editBrandInfo');
+Route::post('/update-brand', 'BrandController@updateBrandInfo');
+Route::get('/delete-brand/{id}', 'BrandController@deleteBrandInfo');
 
 
 //Back End Product Management
 Route::get('/add-product', 'ProductController@addProduct');
+Route::post('/new-product', 'ProductController@saveProductInfo');
+//Route::post('/manage-product', 'ProductController@manageProductInfo');
+
+
 
 //back end blog code
 Route::get('/add-blog', 'BlogController@addBlog');

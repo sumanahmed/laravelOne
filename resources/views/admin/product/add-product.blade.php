@@ -11,25 +11,25 @@
                     <div class="panel-body">
 
                         <h1 class="text-center text-success"> {{ Session::get('message') }}</h1>
-                        <form id="myform" class="form-horizontal" action="{{ url('/new-brand') }}" method="POST">
+                        <form id="myform" class="form-horizontal" action="{{ url('/new-product') }}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="publication_status" class="col-sm-3">Category Name</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" name="publication_status" id="publication_status" required>
-                                        <option>---Select Publication Status---</option>
-                                        <option value="1">Published</option>
-                                        <option value="0">Unpublished</option>
+                                    <select class="form-control" name="category_id" id="publication_status" required>
+                                        @foreach($catgories as $catgory)
+                                        <option value="{{ $catgory->id }}">{{ $catgory->category_name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="publication_status" class="col-sm-3">Brand Name</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" name="publication_status" id="publication_status" required>
-                                        <option>---Select Publication Status---</option>
-                                        <option value="1">Published</option>
-                                        <option value="0">Unpublished</option>
+                                    <select class="form-control" name="brand_id" id="publication_status" required>
+                                        @foreach($brands as $brand)
+                                        <option value="{{ $brand->id }}">{{ $brand['brand_name'] }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

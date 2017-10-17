@@ -35,18 +35,18 @@
                                 <tr class="odd gradeX">
                                     <td>{{ $i++ }}</td>
                                     <td>{{ $allBrand->id }}</td>
-                                    <td>{{ $allBrand->Brand_name }}</td>
-                                    <td>{{ $allBrand->Brand_description }}</td>
+                                    <td>{{ $allBrand->brand_name }}</td>
+                                    <td>{{ $allBrand->brand_description }}</td>
                                     <td>{{ $allBrand->publication_status == 1 ? 'Published' : 'Unpublished' }}</td>
                                     <td>
                                         @if($allBrand->publication_status == 1)
-                                            <a href="{{ url('/unpublished-Brand/'.$allBrand->id) }}" class="btn btn-success btn-xs" title="Published Brand"> <span class="glyphicon glyphicon-arrow-up"></span></a>
+                                            <a href="{{ url('/unpublished-brand/'.$allBrand->id) }}" class="btn btn-success btn-xs" title="Published Brand"> <span class="glyphicon glyphicon-arrow-up"></span></a>
                                         @else
-                                            <a href="{{ url('/published-Brand/'.$allBrand->id) }}" class="btn btn-warning btn-xs" title="Unpublished Brand"> <span class="glyphicon glyphicon-arrow-down"></span></a>
+                                            <a href="{{ url('/published-brand/'.$allBrand->id) }}" class="btn btn-warning btn-xs" title="Unpublished Brand"> <span class="glyphicon glyphicon-arrow-down"></span></a>
                                         @endif
 
-                                        <a href="{{ url('/edit-Brand/'.$allBrand->id) }}" class="btn btn-primary btn-xs" title="Edit Brand"> <span class="glyphicon glyphicon-edit"></span></a>
-                                        <a href="{{ url('/delete-Brand/'.$allBrand->id) }}" onclick="return confirm('Are you sure to delete ?');" class="btn btn-danger btn-xs" title="Delete Brand"> <span class="glyphicon glyphicon-trash"></span></a>
+                                        <a href="{{ url('/edit-brand/'.$allBrand->id) }}" class="btn btn-primary btn-xs" title="Edit Brand"> <span class="glyphicon glyphicon-edit"></span></a>
+                                        <a href="{{ url('/delete-brand/'.$allBrand->id) }}" onclick="return confirm('Are you sure to delete ?');" class="btn btn-danger btn-xs" title="Delete Brand"> <span class="glyphicon glyphicon-trash"></span></a>
                                     </td>
                                 </tr>
                             @endforeach

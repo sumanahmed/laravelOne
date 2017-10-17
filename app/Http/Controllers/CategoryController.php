@@ -22,7 +22,7 @@ class CategoryController extends Controller
     }
 
 
-    public function manageCategoryInfo(Request $request){
+    public function manageCategoryInfo(){
         $allCategoies = Category::all();
         return view('admin.category.manage-category', ['allCategoies'=>$allCategoies]);
     }
