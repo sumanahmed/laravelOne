@@ -5,6 +5,7 @@ use App\Category;
 use App\Brand;
 use App\Product;
 use Image;
+use DB;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -52,8 +53,28 @@ class ProductController extends Controller
 
     }
 
-   /* public function manageProductInfo(){
-        $allProducts = Product::all();
-        return view('admin.product.manage-product', ['allProducts' => $allProducts]);
-    }*/
+    public function manageProductInfo(){
+        //$products = Product::all();
+        $products = DB::table('products')
+                       ->join('categories', 'products.category_id', '=', 'categories.id')
+                       ->join('brands', 'products.brand_id', '=', 'brands.id')
+                       ->select('products.*', 'categories.category_name', 'brands.brand_name')
+                       ->get();
+        return view('admin.product.manage-product', ['products' => $products]);
+    }
+
+    public function viewProductInfo($id){
+        $product = DB::table('products')
+            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->join('brands', 'products.brand_id', '=', 'brands.id')
+            ->select('products.*', 'categories.category_name', 'brands.brand_name')
+            ->where('products.id', $id)
+            ->first();
+        return view('admin.product.view-product', ['product'=>$product]);
+    }
+
+
+
+
+
 }

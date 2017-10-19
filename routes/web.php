@@ -2,7 +2,7 @@
 
 //front end
 Route::get('/', 'WelcomeController@index');
-Route::get('/category', 'WelcomeController@category');
+Route::get('/product-category', 'WelcomeController@category');
 
 
 //back end category code
@@ -30,6 +30,8 @@ Route::get('/delete-brand/{id}', 'BrandController@deleteBrandInfo');
 //Back End Product Management
 Route::get('/add-product', 'ProductController@addProduct');
 Route::post('/new-product', 'ProductController@saveProductInfo');
+Route::get('/manage-product', 'ProductController@manageProductInfo');
+Route::get('/view-product/{id}', 'ProductController@viewProductInfo');
 //Route::post('/manage-product', 'ProductController@manageProductInfo');
 
 
@@ -44,5 +46,4 @@ Route::get('/manage-blog', 'BlogController@manageBlog');
 
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
