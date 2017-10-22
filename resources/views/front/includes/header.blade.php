@@ -36,7 +36,7 @@
                                 <li class="active"><a href="{{url('/')}}" class="act">Home</a></li>
                                 <!-- Mega Menu -->
                                 @foreach($publishedCategories as $publishedCategory)
-                                <li><a href="{{ url('/product-category') }}">{{ $publishedCategory->category_name }}</a></li>
+                                <li><a href="{{ url('/product-category/'.$publishedCategory->id) }}">{{ $publishedCategory->category_name }}</a></li>
                                 @endforeach
                             </ul>
                         </div>

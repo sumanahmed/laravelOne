@@ -26,43 +26,43 @@
                             </tr>
                             <tr>
                                <th>Category Name </th>
-                               <td>Product ID </td>
+                               <td>{{ $product->category_name }}</td>
                             </tr>
                             <tr>
                                <th>Brand Name</th>
-                               <td>Product ID </td>
+                               <td>{{ $product->brand_name }}</td>
                             </tr>
                             <tr>
                                <th>Product Name</th>
-                               <td>Product ID </td>
+                               <td>{{ $product->product_name }}</td>
                             </tr>
                             <tr>
                                <th>Product Code</th>
-                               <td>Product ID </td>
+                               <td>{{ $product->product_code }}</td>
                             </tr>
                             <tr>
                                <th>Product Price</th>
-                               <td>Product ID </td>
+                               <td>{{ $product->product_price }}</td>
                             </tr>
                             <tr>
                                <th>Product Quantity</th>
-                               <td>Product ID </td>
+                               <td>{{ $product->product_quantity }}</td>
                             </tr>
                             <tr>
                                <th>Product Short Description</th>
-                               <td>Product ID </td>
+                               <td>{{ $product->short_description }}</td>
                             </tr>
                             <tr>
                                <th>Product Long Description</th>
-                               <td>Product ID </td>
+                               <td>{{ $product->long_description }}</td>
                             </tr>
                             <tr>
                                <th>Product Image</th>
-                               <td>Product ID </td>
+                               <td><img src="{{ asset($product->product_image) }}" alt="" width="80" height="80"></td>
                             </tr>
                             <tr>
                                <th>Publication Status</th>
-                               <td>Product ID </td>
+                               <td>{{ $product->publication_status == 1 ? 'Publiahws':'Unpublished' }}</td>
                             </tr>
 
                         </table>

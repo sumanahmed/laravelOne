@@ -115,13 +115,13 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href=""><i class="fa fa-navicon fa-fw"></i>  Blogs<span class="fa arrow"></span></a>
+                        <a href=""><i class="fa fa-navicon fa-fw"></i>  Home Offer<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{ url('/add-blog') }}">Add Blog</a>
+                                <a href="{{ url('/add-offer') }}">Add Offer</a>
                             </li>
                             <li>
-                                <a href="{{ url('/manage-blog') }}">Manage Blog</a>
+                                <a href="{{ url('/manage-offer') }}">Manage Offer</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->

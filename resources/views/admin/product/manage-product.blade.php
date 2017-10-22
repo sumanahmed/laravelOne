@@ -50,8 +50,8 @@
                                             <a href="{{ url('/published-product/'.$product->id) }}" class="btn btn-warning btn-xs" title="Unpublished Product"> <span class="glyphicon glyphicon-arrow-down"></span></a>
                                         @endif
 
-                                        <a href="{{ url('/edit-category/'.$product->id) }}" class="btn btn-primary btn-xs" title="Edit Product"> <span class="glyphicon glyphicon-edit"></span></a>
-                                        <a href="{{ url('/delete-category/'.$product->id) }}" onclick="return confirm('Are you sure to delete ?');" class="btn btn-danger btn-xs" title="Delete Product"> <span class="glyphicon glyphicon-trash"></span></a>
+                                        <a href="{{ url('/edit-product/'.$product->id) }}" class="btn btn-primary btn-xs" title="Edit Product"> <span class="glyphicon glyphicon-edit"></span></a>
+                                        <a href="{{ url('/delete-product/'.$product->id) }}" onclick="return confirm('Are you sure to delete ?');" class="btn btn-danger btn-xs" title="Delete Product"> <span class="glyphicon glyphicon-trash"></span></a>
                                     </td>
                                 </tr>
                             @endforeach

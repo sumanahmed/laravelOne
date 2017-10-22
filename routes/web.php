@@ -2,7 +2,8 @@
 
 //front end
 Route::get('/', 'WelcomeController@index');
-Route::get('/product-category', 'WelcomeController@category');
+Route::get('/product-category/{id}', 'WelcomeController@category');
+Route::get('/product-details/{id}', 'WelcomeController@productDetails');
 
 
 //back end category code
@@ -32,8 +33,27 @@ Route::get('/add-product', 'ProductController@addProduct');
 Route::post('/new-product', 'ProductController@saveProductInfo');
 Route::get('/manage-product', 'ProductController@manageProductInfo');
 Route::get('/view-product/{id}', 'ProductController@viewProductInfo');
+Route::get('/edit-product/{id}', 'ProductController@editProductInfo');
 //Route::post('/manage-product', 'ProductController@manageProductInfo');
 
+//slider management code
+/*Route::get('/add-slider', 'SliderController@addSliderInfo');
+Route::post('/new-slider', 'SliderController@saveSliderInfo');
+Route::get('/manage-slider', 'SliderController@manageSliderInfo');
+Route::get('/unpublished-slider/{id}', 'SliderController@unpublishedSliderInfo');
+Route::get('/published-slider/{id}', 'SliderController@publishedSliderInfo');
+Route::get('/edit-slider/{id}', 'SliderController@editSliderInfo');
+Route::post('/update-slider', 'SliderController@updateSliderInfo');
+Route::get('/delete-slider/{id}', 'SliderController@deleteSliderInfo');*/
+
+//Home offer
+Route::get('/add-offer','HomeofferController@addHomeOffer');
+Route::post('/new-offer','HomeofferController@saveHomeOffer');
+Route::get('/manage-offer', 'HomeofferController@manageHomeOffer');
+Route::get('/view-offer/{id}', 'HomeofferController@viewHomeOffer');
+Route::get('/edit-offer/{id}', 'HomeofferController@editHomeOffer');
+Route::post('/update-offer', 'HomeofferController@updateHomeOffer');
+Route::get('/delete-offer/{id}', 'HomeofferController@deleteHomeOffer');
 
 
 //back end blog code

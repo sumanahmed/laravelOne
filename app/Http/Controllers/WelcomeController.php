@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Product;
+use App\Homeoffer;
 use Illuminate\Http\Request;
 
 class WelcomeController extends Controller
@@ -12,12 +13,28 @@ class WelcomeController extends Controller
     public function index(){
         //$products = Product::where('publication_status', 1)->orderBy('id', 'desc')->skip(2)->take(4)->get();
         $products = Product::where('publication_status', 1)->orderBy('id', 'desc')->take(4)->get();
-
-        return view('front.home.home-content', ['products'=>$products]);
+        $homeoffers = Homeoffer::all()->take(1);
+        return view('front.home.home-content', [
+            'products'=>$products,
+            'homeoffers'=>$homeoffers
+        ]);
 
     }
-    public function category(){
-        return view('front.category.category-content');
+    public function category($id){
+        $categoryProducts = Product::where('category_id', $id)
+                ->where('publication_status', 1)
+                ->orderBy('id','desc')
+                ->get();
+        return view('front.category.category-content', ['categoryProducts' => $categoryProducts]);
+    }
+
+    public function productDetails($id){
+        $product = Product::find($id);
+        $relatedProducts = Product::where('category_id', $product->category_id)->orderBy('id', 'desc')->take(4)->get();
+        return view('front.product.product-details', [
+            'product'=>$product,
+            'relatedProducts'=>$relatedProducts
+        ]);
     }
 
 

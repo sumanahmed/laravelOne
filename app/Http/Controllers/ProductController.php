@@ -73,6 +73,11 @@ class ProductController extends Controller
         return view('admin.product.view-product', ['product'=>$product]);
     }
 
+    public function editProductInfo($id){
+        $productById = Product::find($id);
+        return view('admin.product.edit-product', ['productById' => $productById]);
+    }
+
 
 
 
