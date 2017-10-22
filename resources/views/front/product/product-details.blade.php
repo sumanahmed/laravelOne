@@ -67,8 +67,16 @@
                                     <!--quantity-->
                                 </div>
                                 <div class="women">
-                                    <span class="size">XL / XXL / S </span>
-                                    <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+                                    <form action="{{ url('/add-to-cart') }}" method="POST">
+                                        {{ csrf_field() }}
+                                       <div class="form-group">
+                                           <input type="number" name="qty" value="1" min="1">
+                                           <input type="hidden" name="product_id" value="{{ $product->id }}" id="">
+                                       </div>
+                                       <div class="form-group">
+                                           <input type="submit" name="btn" value="Add to Cart" class="my-cart-b item_add">
+                                       </div>
+                                    </form>
                                 </div>
                                 <div class="social-icon">
                                     <a href="#"><i class="icon"></i></a>

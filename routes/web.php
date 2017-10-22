@@ -5,6 +5,9 @@ Route::get('/', 'WelcomeController@index');
 Route::get('/product-category/{id}', 'WelcomeController@category');
 Route::get('/product-details/{id}', 'WelcomeController@productDetails');
 
+Route::post('/add-to-cart/{id}', 'CartController@addToCart');
+Route::get('/show-cart', 'CartController@showCart');
+
 
 //back end category code
 Route::get('/add-category', 'CategoryController@addCategory');
