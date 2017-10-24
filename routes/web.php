@@ -5,8 +5,17 @@ Route::get('/', 'WelcomeController@index');
 Route::get('/product-category/{id}', 'WelcomeController@category');
 Route::get('/product-details/{id}', 'WelcomeController@productDetails');
 
-Route::post('/add-to-cart/{id}', 'CartController@addToCart');
+Route::post('/add-to-cart', 'CartController@addToCart');
 Route::get('/show-cart', 'CartController@showCart');
+Route::post('/update-cart-product', 'CartController@updateCart');
+Route::get('/direct-add-to-cart/{id}', 'CartController@directAddToCart');
+Route::get('/delete-cart-product/{rowId}', 'CartController@deleteCart');
+
+
+//customer
+Route::get('/checkout', 'CheckoutController@index');
+Route::post('//new-customer', 'CheckoutController@saveCustomerInfo');
+
 
 
 //back end category code

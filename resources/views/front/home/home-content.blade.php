@@ -123,7 +123,7 @@
                                 <h6><a href="single.html">{{ $product->product_name }}</a></h6>
                                 <span class="size">XL / XXL / S </span>
                                 <p ><em class="item_price">Tk. {{ $product->product_price }}</em></p>
-                                <a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+                                <a href="{{ url('/direct-add-to-cart/'.$product->id) }}" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
                             </div>
                         </div>
                     </div>
