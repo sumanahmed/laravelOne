@@ -14,7 +14,12 @@ Route::get('/delete-cart-product/{rowId}', 'CartController@deleteCart');
 
 //customer
 Route::get('/checkout', 'CheckoutController@index');
-Route::post('//new-customer', 'CheckoutController@saveCustomerInfo');
+Route::post('/customer-login', 'CheckoutController@customerLogin');
+Route::post('/new-customer', 'CheckoutController@saveCusterInfo');
+Route::get('/shipping-info', 'CheckoutController@showShippingInfo');
+Route::post('/new-shipping', 'CheckoutController@saveShippingInfo');
+Route::get('/payment-info', 'CheckoutController@showPaymentInfo');
+Route::get('/new-order', 'CheckoutController@saveOrderInfo');
 
 
 

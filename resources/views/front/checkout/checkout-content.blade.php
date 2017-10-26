@@ -26,7 +26,8 @@
                         <div class="panel-body">
                             <h2 class="text-success text-center">Login Form</h2>
                             <hr>
-                            <form class="form-horizontal" action="" method="POST">
+                            <form class="form-horizontal" action="{{ url('/customer-login') }}" method="POST">
+                                {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="email" class="control-label col-sm-3">Email Address</label>
                                     <div class="col-sm-9">
